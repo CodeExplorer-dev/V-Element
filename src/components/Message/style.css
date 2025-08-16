@@ -1,0 +1,88 @@
+.wl-message {
+  --wl-message-bg-color: var(--wl-color-info-light-9);
+  --wl-message-border-color: var(--wl-border-color-lighter);
+  --wl-message-padding: 15px 19px;
+  --wl-message-text-color: var(--wl-text-color-primary);
+  --wl-message-close-size: 16px;
+  --wl-messasge-close-icon-color: var(--wl-text-color-placeholder);
+  --wl-messasge-close-hover-color: var(--wl-text-color-secondary);
+}
+
+.wl-message {
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+  border-radius: var(--wl-border-radius-base);
+  border-width: var(--wl-border-width);
+  border-style: var(--wl-border-style);
+  border-color: var(--wl-message-border-color);
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  background-color: var(--wl-message-bg-color);
+  padding: var(--wl-message-padding);
+  display: flex;
+  align-items: center;
+  transition: top var(--wl-transition-duration), 
+              opacity var(--wl-transition-duration),
+              transform var(--wl-transition-duration);
+  .wl-message__content {
+    color: var(--wl-message-text-color);
+    overflow-wrap: anywhere;
+  }
+  &.is-close .wl-message__content {
+    padding-right: 30px;
+  }
+  .wl-message__close {
+    display: flex;
+    align-items: center;
+  }
+  .wl-message__close svg {
+    cursor: pointer;
+  }
+}
+
+.wl-message--info {
+  --wl-message-bg-color: var(--wl-color-info-light-9);
+  --wl-message-border-color: var(--wl-color-info-light-8);
+  --wl-message-text-color: var(--wl-color-info);
+  .wl-message__close {
+    --wl-icon-color: var(--wl-color-info)
+  }
+}
+
+.wl-message--success {
+  --wl-message-bg-color: var(--wl-color-success-light-9);
+  --wl-message-border-color: var(--wl-color-success-light-8);
+  --wl-message-text-color: var(--wl-color-success);
+  .wl-message__close {
+    --wl-icon-color: var(--wl-color-success)
+  }
+}
+
+.wl-message--warning {
+  --wl-message-bg-color: var(--wl-color-warning-light-9);
+  --wl-message-border-color: var(--wl-color-warning-light-8);
+  --wl-message-text-color: var(--wl-color-warning);
+  .wl-message__close {
+    --wl-icon-color: var(--wl-color-warning)
+  }
+}
+
+.wl-message--danger {
+  --wl-message-bg-color: var(--wl-color-danger-light-9);
+  --wl-message-border-color: var(--wl-color-danger-light-8);
+  --wl-message-text-color: var(--wl-color-danger);
+  .wl-message__close {
+    --wl-icon-color: var(--wl-color-danger)
+  }
+}
+
+.wl-message.fade-up-enter-from,
+.wl-message.fade-up-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}
+
+

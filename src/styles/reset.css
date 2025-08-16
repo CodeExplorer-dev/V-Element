@@ -1,0 +1,63 @@
+body {
+  font-family: var(--wl-font-family);
+  font-weight: 400;
+  font-size: var(--wl-font-size-base);
+  color: var(--wl-text-color-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: var(--wl-color-primary);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--wl-color-primary-light-3)
+  }
+
+  &:active {
+    color: var(--wl-color-primary-dark-2)
+  }
+}
+
+h1,
+h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  color: var(--wl-text-color-primary);
+  font-family: var(--wl-font-family);
+}
+
+h1 {
+  font-size: var(--wl-font-size-extra-large);
+}
+
+h2 {
+  font-size: var(--wl-font-size-large);
+}
+
+h3 {
+  font-size: var(--wl-font-size-base);
+}
+
+h4 {
+  font-size: var(--wl-font-size-medium);
+}
+
+h5 {
+  font-size: var(--wl-font-size-small);
+}
+
+h6 {
+  font-size: var(--wl-font-size-extra-small);
+}
+
+p {
+  font-size: var(--wl-font-size-base);
+  line-height: 1.6;
+  margin: 0;
+}

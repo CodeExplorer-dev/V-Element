@@ -1,0 +1,87 @@
+.wl-tooltip{
+  --wl-popover-bg-color: var(--wl-bg-color-overlay);
+  --wl-popover-font-size: var(--wl-font-size-base);
+  --wl-popover-border-color: var(--wl-border-color-lighter);
+  --wl-popover-padding: 12px;
+  --wl-popover-border-radius: 4px;
+  display: inline-block;
+}
+
+.wl-tooltip {
+  .wl-tooltip__popper{
+    background: var(--wl-popover-bg-color);
+    border-radius: var(--wl-popover-border-radius);
+    font-size: var(--wl-popover-font-size);
+    padding: var(--wl-popover-padding);
+    border: 1px solid var(--wl-popover-border-color);
+    color: var(--wl-text-color-regular);
+    line-height: 1.4;
+    text-align: justify;
+    box-shadow: var(--wl-box-shadow);
+    word-break: break-all;
+    box-sizing: border-box;
+    z-index: 1000;
+
+    #arrow,
+    #arrow::before {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      box-sizing: border-box;
+      background: var(--wl-popover-bg-color);
+      /* box-shadow: var(--wl-box-shadow); */
+    }
+    #arrow {
+      visibility: hidden;
+    }
+    #arrow::before {
+      visibility: visible;
+      content: " ";
+      transform: rotate(45deg);
+    }
+
+    &[data-popper-placement^='top'] > #arrow {
+      bottom: -5px;
+    }
+    &[data-popper-placement^='bottom'] > #arrow {
+      top: -5px;
+    }
+    &[data-popper-placement^='left'] > #arrow {
+      right: -5px;
+    }
+    &[data-popper-placement^='right'] > #arrow {
+      left: -5px;
+    }
+
+    &[data-popper-placement^='top'] > #arrow::before {
+      border-right: 1px solid var(--wl-popover-border-color);
+      border-bottom: 1px solid var(--wl-popover-border-color);
+      box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.1); /* 右下阴影 */
+    }
+    &[data-popper-placement^='bottom'] > #arrow::before {
+      border-left: 1px solid var(--wl-popover-border-color);
+      border-top: 1px solid var(--wl-popover-border-color);
+      box-shadow: -1px -1px 2px 0 rgba(0,0,0,0.1); /* 左上阴影 */
+    }
+    &[data-popper-placement^='left'] > #arrow::before {
+      border-top: 1px solid var(--wl-popover-border-color);
+      border-right: 1px solid var(--wl-popover-border-color);
+      box-shadow: 1px -1px 2px 0 rgba(0,0,0,0.1); /* 右上阴影 */
+    }
+    &[data-popper-placement^='right'] > #arrow::before {
+      border-bottom: 1px solid var(--wl-popover-border-color);
+      border-left: 1px solid var(--wl-popover-border-color);
+      box-shadow: -1px 1px 2px 0 rgba(0,0,0,0.1); /* 左下阴影 */
+    }
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity var(--wl-transition-duration);
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+}

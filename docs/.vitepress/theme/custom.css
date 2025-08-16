@@ -1,0 +1,31 @@
+:root {
+  --vp-c-brand: var(--wl-color-primary);
+  --vp-c-brand-light: var(--wl-color-primary-light-3);
+  --vp-c-brand-lighter: var(--wl-color-primary-light-5);
+  --vp-c-brand-dark: var(--wl-color-primary-dark-2);
+  --vp-c-brand-darker: #2371c0;
+
+  --compoment-preview-bg: var(--vp-code-black-bg);
+  --compoment-preview-soft: var(--vp-code-black-bg-light);
+}
+
+body {
+  color: var(--vp-c-text-1);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: var(--vp-c-text-1);
+}
+
+/* .vitepress/theme/style.css */
+.wl-button + .wl-button {
+  margin-left: 12px;
+}
+
+.button_box + .button_box {
+  margin-top: 12px;
+}
+
+.wl-alert + .wl-alert {
+  margin-top: 12px;
+}

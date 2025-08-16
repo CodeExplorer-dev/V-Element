@@ -1,0 +1,63 @@
+.wl-collapse {
+  --wl-collapse-border-color: var(--wl-border-color-light);
+  --wl-collapse-header-height: 48px;
+  --wl-collapse-header-bg-color: var(--wl-fill-color-blank);
+  --wl-collapse-header-text-color: var(--wl-text-color-primary);
+  --wl-collapse-header-font-size: 13px;
+  --wl-collapse-content-bg-color: var(--wl-fill-color-blank);
+  --wl-collapse-content-font-size: 13px;
+  --wl-collapse-content-text-color: var(--wl-text-color-primary);
+  --wl-collapse-disabled-text-color: var(--wl-disabled-text-color);
+  --wl-collapse-disabled-border-color: var(--wl-border-color-lighter);
+  border-top: 1px solid var(--wl-collapse-border-color);
+  border-bottom: 1px solid var(--wl-collapse-border-color);
+}
+
+.wl-collapse-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--wl-collapse-header-height);
+  line-height: var(--wl-collapse-header-height);
+  background-color: var(--wl-collapse-header-bg-color);
+  color: var(--wl-collapse-header-text-color);
+  cursor: pointer;
+  font-size: var(--wl-collapse-header-font-size);
+  font-weight: 500;
+  transition: border-bottom-color var(--wl-transition-duration);
+  outline: none;
+  border-bottom: 1px solid var(--wl-collapse-border-color);
+
+  &.is-disabled {
+    color: var(--wl-collapse-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+  }
+
+  &.is-active {
+    border-bottom-color: transparent;
+    .header-angle {
+      transform: rotate(90deg);
+    }
+  }
+
+  .header-angle {
+    transition: transform var(--wl-transition-duration);
+  }
+}
+
+.wl-collapse-item__content {
+  will-change: height;
+  background-color: var(--wl-collapse-content-bg-color);
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: var(--wl-collapse-content-font-size);
+  color: var(--wl-collapse-content-text-color);
+  border-bottom: 1px solid var(--wl-collapse-border-color);
+  padding-bottom: 20px;
+}
+ 
+.slide-enter-active, .slide-leave-active {
+  transition: height var(--wl-transition-duration);
+  overflow: hidden;
+}

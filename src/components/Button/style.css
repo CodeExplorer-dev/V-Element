@@ -1,0 +1,205 @@
+.wl-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--wl-text-color-primary);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: var(--wl-font-weight-primary);
+  user-select: none;
+  vertical-align: middle;
+  padding: 8px 15px;
+  font-size: var(--wl-font-size-base);
+  border-radius: var(--wl-border-radius-base);
+  border: var(--wl-border);
+  background-color: var(--wl-bg-color);
+}
+
+[class*=wl-icon] + span {
+  margin-left: 5px;
+}
+
+/* Default */
+.wl-button:hover {
+  background-color: var(--wl-fill-color-light);
+  border-color: var(--wl-border-color-hover);
+}
+
+/* primary */
+.wl-button--primary {
+  color: var(--wl-color-white);
+  background-color: var(--wl-color-primary);
+  border-color: var(--wl-color-primary);
+}
+
+.wl-button--primary:hover {
+  background: var(--wl-color-primary-light-3);
+  border-color: var(--wl-color-primary-light-3);
+}
+
+.wl-button--primary.is-plain {
+  color: var(--wl-color-primary);
+  background: var(--wl-color-primary-light-9);
+  border-color: var(--wl-color-primary-light-5);
+}
+
+.wl-button--primary.is-plain:hover {
+  background: var(--wl-color-primary);
+  border-color: var(--wl-color-primary);
+  color: var(--wl-color-white);
+}
+
+/* .wl-button--primary.is-plain:active {
+  background: var(--wl-color-primary-dark-2);
+  border-color: var(--wl-color-primary-dark-2);
+} */
+
+/* success */
+.wl-button--success {
+  color: var(--wl-color-white);
+  background-color: var(--wl-color-success);
+  border-color: var(--wl-color-success);
+}
+
+.wl-button--success:hover {
+  background: var(--wl-color-success-light-3);
+  border-color: var(--wl-color-success-light-3);
+}
+
+.wl-button--success.is-plain {
+  color: var(--wl-color-success);
+  background: var(--wl-color-success-light-9);
+  border-color: var(--wl-color-success-light-5);
+}
+
+.wl-button--success.is-plain:hover {
+  background: var(--wl-color-success);
+  border-color: var(--wl-color-success);
+  color: var(--wl-color-white);
+}
+
+/* .wl-button--success.is-plain:active {
+  background: var(--wl-color-success-dark-2);
+  border-color: var(--wl-color-success-dark-2);
+} */
+
+/* warning */
+.wl-button--warning {
+  color: var(--wl-color-white);
+  background-color: var(--wl-color-warning);
+  border-color: var(--wl-color-warning);
+}
+
+.wl-button--warning:hover {
+  background: var(--wl-color-warning-light-3);
+  border-color: var(--wl-color-warning-light-3);
+}
+
+.wl-button--warning.is-plain {
+  color: var(--wl-color-warning);
+  background: var(--wl-color-warning-light-9);
+  border-color: var(--wl-color-warning-light-5);
+}
+
+.wl-button--warning.is-plain:hover {
+  background: var(--wl-color-warning);
+  border-color: var(--wl-color-warning);
+  color: var(--wl-color-white);
+}
+
+/* .wl-button--warning.is-plain:active {
+  background: var(--wl-color-warning-dark-2);
+  border-color: var(--wl-color-warning-dark-2);
+} */
+
+/* danger */
+.wl-button--danger {
+  color: var(--wl-color-white);
+  background-color: var(--wl-color-danger);
+  border-color: var(--wl-color-danger);
+}
+
+.wl-button--danger:hover {
+  background: var(--wl-color-danger-light-3);
+  border-color: var(--wl-color-danger-light-3);
+}
+
+.wl-button--danger.is-plain {
+  color: var(--wl-color-danger);
+  background: var(--wl-color-danger-light-9);
+  border-color: var(--wl-color-danger-light-5);
+}
+
+.wl-button--danger.is-plain:hover {
+  background: var(--wl-color-danger);
+  border-color: var(--wl-color-danger);
+  color: var(--wl-color-white);
+}
+
+/* .wl-button--danger.is-plain:active {
+  background: var(--wl-color-danger-dark-2);
+  border-color: var(--wl-color-danger-dark-2);
+} */
+
+/* info */
+.wl-button--info {
+  color: var(--wl-color-white);
+  background-color: var(--wl-color-info);
+  border-color: var(--wl-color-info);
+}
+
+.wl-button--info:hover {
+  background: var(--wl-color-info-light-3);
+  border-color: var(--wl-color-info-light-3);
+}
+
+.wl-button--info.is-plain {
+  color: var(--wl-color-info);
+  background: var(--wl-color-info-light-9);
+  border-color: var(--wl-color-info-light-5);
+}
+
+.wl-button--info.is-plain:hover {
+  background: var(--wl-color-info);
+  border-color: var(--wl-color-info);
+  color: var(--wl-color-white);
+}
+
+/* .wl-button--info.is-plain:active {
+  background: var(--wl-color-info-dark-2);
+  border-color: var(--wl-color-info-dark-2);
+} */
+
+/* disabled */
+.wl-button.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* other */
+.wl-button--small {
+  height: 24px;
+  padding: 5px 11px;
+  font-size: var(--wl-font-size-small);
+}
+
+.wl-button--large {
+  height: 40px;
+  padding: 12px 19px;
+  font-size: var(--wl-font-size-medium);
+}
+
+.wl-button.is-round {
+  border-radius: var(--wl-border-radius-round);
+}
+
+.wl-button.is-circle {
+  border-radius: var(--wl-border-radius-circle);
+  padding: 8px;
+}

@@ -1,0 +1,30 @@
+.wl-icon {
+  --wl-icon-color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--wl-icon-color);
+  font-size: inherit;
+}
+
+.wl-icon--primary {
+  --wl-icon-color: var(--wl-color-primary);
+}
+
+.wl-icon--info {
+  --wl-icon-color: var(--wl-color-info);
+}
+
+.wl-icon--success {
+  --wl-icon-color: var(--wl-color-success);
+}
+
+.wl-icon--danger {
+  --wl-icon-color: var(--wl-color-danger);
+}
+
+.wl-icon--warning {
+  --wl-icon-color: var(--wl-color-warning);
+}
