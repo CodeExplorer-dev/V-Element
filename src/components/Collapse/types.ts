@@ -5,17 +5,19 @@ export type NameType = string | number;
 export interface CollapseProps {
   modelValue: NameType[];
   accordion?: boolean;
+  iconPosition?: 'left' | 'right';
 }
 
 export interface CollapseItemProps {
   name: NameType;
   title?: string;
-  disabled?: boolean
+  disabled?: boolean,
 }
 
 export interface CollapseContext {
-  activeNames: Ref<NameType[]>
-  handleItemClick: (name: NameType) => void
+  activeNames: Ref<NameType[]>,
+  handleItemClick: (name: NameType) => void,
+  iconPosition: 'left' | 'right';
 }
 
 export interface CollapseEmits {

@@ -13,8 +13,12 @@ defineOptions({
   name: 'wl-collapse'
 });
 
-const props = defineProps<CollapseProps>()
-const emits = defineEmits<CollapseEmits>() 
+const props = withDefaults(defineProps<CollapseProps>(), {
+  accordion: false,
+  iconPosition: 'right'
+})
+
+const emits = defineEmits<CollapseEmits>()
 
 const activeNames = ref<NameType[]>(props.modelValue)
 
@@ -47,7 +51,8 @@ const handleItemClick = (itemName: NameType) => {
 
 provide(collapseContextKey, {
   activeNames,
-  handleItemClick
+  handleItemClick,
+  iconPosition: props.iconPosition
 })
 </script>
 

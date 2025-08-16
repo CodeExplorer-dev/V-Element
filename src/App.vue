@@ -133,7 +133,7 @@ onMounted(() => {
     <Button type="primary" size="large" icon="arrow-down">下面</Button>
   </div>
 
-  <Collapse v-model="openedValue">
+  <Collapse v-model="openedValue" icon-position="left">
     <CollapseItem v-for="item in datas" :key="item.name" :name="item.name" :title="item.title">
       <!-- <template #title>
         <h1>title for a</h1>

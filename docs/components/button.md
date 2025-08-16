@@ -23,11 +23,9 @@ discripton: Button 组件的文档
 <preview path="../demo/Button/IconButton.vue" title="图标按钮" discripton="带图标的按钮可增强辨识度（有文字时）或节省空间（无文字时）"></preview>
 
 
-
-
 ## API
 ### Button Attributes
-| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| 属性名 | 说明 | 类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- |
 | type | 按钮类型 | `string` | `primary` / `success` / `warning` / `danger` / `info` / `default`| default |
 | size | 按钮尺寸 | `string` | `small` / `normal` / `large` | normal |

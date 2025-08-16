@@ -9,15 +9,17 @@
     class="wl-collapse-item__header" 
     :class="{
       'is-active': isActive,
-      'is-disabled': disabled
+      'is-disabled': disabled,
+      'icon-left': collapseContext?.iconPosition === 'left',
+      'icon-right': collapseContext?.iconPosition === 'right'
     }"
     :id="`item-header-${name}`" 
     @click="handleClick"
   >
     <slot name="title">
-      <h1>{{ title }}</h1>
+      <div>{{ title }}</div>
     </slot>
-    <Icon icon="angle-right" class="header-angle" />
+    <Icon icon="angle-right" class="header-angle" size="xs"></Icon>
   </div>
   <Transition name="slide" v-on="transitionEvents">
     <div class="wl-collapse-item__wrapper" v-show="isActive">
@@ -69,9 +71,3 @@ const transitionEvents: Record<string, (el: HTMLElement) => void> = {
   }
 }
 </script>
-
-<style>
-.wl-collapse-item__header{
-  font-size: 30px;
-}
-</style>

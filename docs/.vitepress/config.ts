@@ -29,10 +29,10 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: '快速开始',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: '组件预览', link: '/components/start' },
+          // { text: 'Runtime API Examples', link: '/api-examples' }
         ]
       },
       {
@@ -40,6 +40,7 @@ export default defineConfig({
         items: [
           { text: 'Button 按钮', link: '/components/button' },
           { text: 'Alert 提示', link: '/components/alert' },
+          { text: 'Collapse 折叠面板', link: '/components/collapse' },
         ]
       }
     ],

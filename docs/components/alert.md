@@ -35,7 +35,7 @@ Alert 组件支持自定义内容。
 
 
 ## API
-### Alert 属性
+### Alert Attributes
 | 属性名 | 说明 | 类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- |
 | type | 提示样式 | string | `primary` / `success` / `warning` / `danger` / `info` | `info` |

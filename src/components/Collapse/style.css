@@ -3,7 +3,7 @@
   --wl-collapse-header-height: 48px;
   --wl-collapse-header-bg-color: var(--wl-fill-color-blank);
   --wl-collapse-header-text-color: var(--wl-text-color-primary);
-  --wl-collapse-header-font-size: 13px;
+  --wl-collapse-header-font-size: var(--wl-font-size-extra-large);
   --wl-collapse-content-bg-color: var(--wl-fill-color-blank);
   --wl-collapse-content-font-size: 13px;
   --wl-collapse-content-text-color: var(--wl-text-color-primary);
@@ -38,11 +38,20 @@
     border-bottom-color: transparent;
     .header-angle {
       transform: rotate(90deg);
+      font-weight: normal;
     }
   }
 
   .header-angle {
     transition: transform var(--wl-transition-duration);
+  }
+
+  &.icon-left {
+    flex-direction: row-reverse; /* 反转 flex 布局 */
+    justify-content: flex-end; /* 左对齐 */
+    .header-angle {
+      margin-right: 8px; /* 调整图标与文本的间距 */
+    }
   }
 }
 
