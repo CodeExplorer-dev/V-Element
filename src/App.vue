@@ -15,6 +15,7 @@ import Alert from '@/components/Alert/Alert.vue';
 import Toolip from './components/Tooltip/Tooltip.vue';
 import Dropdown from './components/Dropdown/Dropdown.vue';
 import Message from './components/Message/Message.vue';
+import Input from './components/Input/Input.vue';
 
 import { createPopper } from '@popperjs/core'
 import { createMessage } from './components/Message/methods.ts';
@@ -46,6 +47,8 @@ const menuOptions: MenuOption[] = [
   { key: 3, label: 'item3', disabled: true, divided: true},
   { key: 4, label: 'item4' },
 ]
+
+const inputValue = ref('')
 
 const open = () => {
   dropdownRef.value?.show()
@@ -166,8 +169,27 @@ onMounted(() => {
 
   <VNode msg="Hello VNode"/>
 
+  <Input v-model="inputValue" type="text" placeholder="请输入" ></Input>{{ inputValue }}
+  <Input v-model="inputValue" type="text" placeholder="请输入" disabled></Input>>
+  <Input v-model="inputValue" type="text" placeholder="请输入" size="large"></Input>
+  <Input v-model="inputValue" type="text" placeholder="请输入" size="normal"></Input>
+  <Input v-model="inputValue" type="text" placeholder="请输入" size="small"></Input>
+  <Input v-model="inputValue" type="text" placeholder="请输入">
+    <template #prepend>Prepend</template>
+    <template #append>Append</template>
+  </Input>
+
+  <Input v-model="inputValue" type="text" placeholder="请输入">
+    <template #prefix>
+      <Icon icon="fa-user" />
+    </template>
+    <template #suffix>
+      <Icon icon="fa-user" />
+    </template>
+  </Input>
+
+  <Input v-model="inputValue" type="textarea" placeholder="请输入"></Input>
+  <Input v-model="inputValue" type="text" placeholder="请输入" show-password></Input>
+  <Input v-model="inputValue" type="text" placeholder="请输入" clearable></Input>
 </template>
 
-<style scoped>
-
-</style>

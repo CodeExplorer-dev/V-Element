@@ -1,0 +1,260 @@
+.wl-input{
+  --wl-input-text-color: var(--wl-text-color-regular);
+  --wl-input-border: var(--wl-border);
+  --wl-input-hover-border: var(--wl-border-color-hover);
+  --wl-input-focus-border: var(--wl-color-primary);
+  --wl-input-transparent-border: 0 0 0 1px transparent inset;
+  --wl-input-border-color: var(--wl-border-color);
+  --wl-input-border-radius: var(--wl-border-radius-base);
+  --wl-input-bg-color: var(--wl-fill-color-blank);
+  --wl-input-icon-color: var(--wl-text-color-placeholder);
+  --wl-input-placeholder-color: var(--wl-text-color-placeholder);
+  --wl-input-hover-border-color: var(--wl-border-color-hover);
+  --wl-input-clear-hover-color: var(--wl-text-color-secondary);
+  --wl-input-focus-border-color: var(--wl-color-primary);
+}
+
+.wl-input {
+  --wl-input-height: var(--wl-component-size);
+  position: relative;
+  font-size: var(--wl-font-size-base);
+  display: inline-flex;
+  width: 100%;
+  line-height: var(--wl-input-height);
+  box-sizing: border-box;
+  vertical-align: middle;
+  &.is-disabled {
+    cursor: not-allowed;
+    .wl-input__wrapper {
+      background-color: var(--wl-disabled-bg-color);
+      box-shadow: 0 0 0 1px var(--wl-disabled-border-color) inset;
+    }
+    .wl-input__inner {
+      color: var(--wl-disabled-text-color);
+      -webkit-text-fill-color: var(--wl-disabled-text-color);
+      cursor: not-allowed;
+    }
+    .wl-textarea__inner {
+      background-color: var(--wl-disabled-bg-color);
+      box-shadow: 0 0 0 1px var(--wl-disabled-border-color) inset;
+      color: var(--wl-disabled-text-color);
+      -webkit-text-fill-color: var(--wl-disabled-text-color);
+      cursor: not-allowed;
+    }
+  }
+  &.is-prepend{
+    >.wl-input__wrapper {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  &.is-append{
+    >.wl-input__wrapper {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+.wl-input--large {
+  --wl-input-height: var(--wl-component-size-large);
+  font-size: 14px;
+  .wl-input__wrapper {
+    padding: 1px 15px;
+    .wl-input__inner {
+      --wl-inner-height: calc(var(--wl-input-height, 40px) - 2px);
+    }
+  }
+}
+
+.wl-input--small {
+  --wl-input-height: var(--wl-component-size-small);
+  font-size: 12px;
+  .wl-input__wrapper {
+    padding: 1px 7px;
+    .wl-input__inner {
+      --wl-inner-height: calc(var(--wl-input-height, 24px) - 2px);
+    }
+  }
+}
+
+.wl-input__prefix, .wl-input__suffix {
+  display: inline-flex;
+  white-space: nowrap;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  height: 100%;
+  text-align: center;
+  color: var(--wl-input-icon-color, var(--wl-text-color-placeholder));
+  transition: all var(--wl-transition-duration)
+}
+
+.wl-input__prefix {
+  >:first-child {
+    margin-left: 0 !important;
+  }
+  >:last-child {
+    margin-right: 8px !important;
+  }
+}
+
+.wl-input__suffix {
+  >:first-child {
+    margin-left: 8px !important;
+  }
+  >:last-child {
+    margin-right: 0 !important;
+  }
+}
+
+.wl-input__prepend, .wl-input__append {
+  background-color: var(--wl-fill-color-light);
+  color: var(--wl-color-info);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  border-radius: var(--wl-input-border-radius);
+  padding: 0 20px;
+  white-space: nowrap;
+}
+
+.wl-input__prepend {
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 1px 0 0 0 var(--wl-input-border-color) inset, 0 1px 0 0 var(--wl-input-border-color) inset, 0 -1px 0 0 var(--wl-input-border-color) inset;
+}
+
+.wl-input__append {
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: -1px 0 0 0 var(--wl-input-border-color) inset, 0 1px 0 0 var(--wl-input-border-color) inset, 0 -1px 0 0 var(--wl-input-border-color) inset;
+}
+
+/* 补充输入框核心样式 */
+.wl-input__wrapper {
+  display: inline-flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1px 11px;
+  background-color: var(--wl-input-bg-color);
+  border: 1px solid var(--wl-input-border-color);
+  border-radius: var(--wl-input-border-radius);
+  transition: box-shadow var(--wl-transition-duration), border-color var(--wl-transition-duration);
+  
+  &:hover {
+    border-color: var(--wl-color-primary);
+  }
+  
+  &.is-focus {
+    border-color: var(--wl-input-focus-border-color);
+    box-shadow: 0 0 0 1px var(--wl-input-focus-border-color) inset;
+  }
+}
+
+/* 输入框内部元素 */
+.wl-input__inner {
+  flex: 1;
+  width: 100%;
+  height: var(--wl-inner-height, calc(var(--wl-input-height) - 2px));
+  padding: 0;
+  line-height: var(--wl-inner-height, calc(var(--wl-input-height) - 2px));
+  color: var(--wl-input-text-color);
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: inherit;
+  
+  &::placeholder {
+    color: var(--wl-input-placeholder-color);
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+/* 文本域特殊样式 */
+.wl-textarea__wrapper {
+  width: 100%;
+  min-height: 60px;
+  padding: 5px 11px;
+  line-height: 1.5;
+  color: var(--wl-input-text-color);
+  background-color: var(--wl-input-bg-color);
+  border: 1px solid var(--wl-input-border-color);
+  border-radius: var(--wl-input-border-radius);
+  resize: vertical;
+  transition: border-color var(--wl-transition-duration);
+  
+  &:hover {
+    border-color: var(--wl-input-hover-border-color);
+  }
+  
+  &:focus {
+    border-color: var(--wl-input-focus-border-color);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--wl-input-focus-border-color) inset;
+  }
+  
+  &::placeholder {
+    color: var(--wl-input-placeholder-color);
+  }
+}
+
+/* 清除按钮和密码切换按钮 */
+.wl-input__clear,
+.wl-input__password {
+  cursor: pointer;
+  color: var(--wl-input-icon-color);
+  transition: color var(--wl-transition-duration);
+  
+  &:hover {
+    color: var(--wl-input-clear-hover-color);
+  }
+}
+
+/* 聚焦状态 */
+.is-focus {
+  .wl-input__wrapper {
+    border-color: var(--wl-input-focus-border-color);
+    box-shadow: 0 0 0 1px var(--wl-input-focus-border-color) inset;
+  }
+}
+
+/* 可清除状态 */
+.is-clearable {
+  .wl-input__suffix {
+    padding-right: 8px;
+  }
+}
+
+ /* 密码输入框特殊处理 */
+.wl-input--password {
+  .wl-input__suffix {
+    cursor: pointer;
+    &:hover {
+      color: var(--wl-text-color-secondary);
+    }
+  }
+}
+
+/*  前后置内容与输入框组合效果 */
+.wl-input__prepend + .wl-input__wrapper,
+.wl-input__wrapper + .wl-input__append {
+  border-radius: 0;
+}
+
+ /* 响应式调整 */
+@media screen and (max-width: 768px) {
+  .wl-input {
+    &--large, &--small {
+      font-size: var(--wl-font-size-base);
+    }
+  }
+}

@@ -99,4 +99,9 @@
   --wl-transition-duration: 0.3s;
   --wl-transition-duration-fast: 0.2s;
 
+  --wl-component-size: 36px;
+  --wl-component-size-large: 40px;
+  --wl-component-size-small: 32px;
+  --wl-input-height: 36px;
+
 }
