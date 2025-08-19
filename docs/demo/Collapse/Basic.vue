@@ -1,9 +1,9 @@
 <template>
 <Collapse v-model="openedValue">
-    <CollapseItem v-for="item in datas" :key="item.name" :name="item.name" :title="item.title">
-      {{ item.content }}
-    </CollapseItem>
-  </Collapse>
+  <CollapseItem v-for="item in datas" :key="item.name" :name="item.name" :title="item.title">
+    {{ item.content }}
+  </CollapseItem>
+</Collapse>
 </template>
 
 <script setup>

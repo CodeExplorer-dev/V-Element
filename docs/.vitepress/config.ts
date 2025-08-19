@@ -41,6 +41,7 @@ export default defineConfig({
           { text: 'Button 按钮', link: '/components/button' },
           { text: 'Alert 提示', link: '/components/alert' },
           { text: 'Collapse 折叠面板', link: '/components/collapse' },
+          { text: 'Input 输入框', link: '/components/input' },
         ]
       }
     ],
