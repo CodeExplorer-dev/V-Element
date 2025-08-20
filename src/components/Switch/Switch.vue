@@ -33,20 +33,24 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<SwitchProps>()
+const props = withDefaults(defineProps<SwitchProps>(), {
+  activeValue: true,
+  inactiveValue: false,
+})
 
 const emit = defineEmits<SwitchEmits>()
 
 const innerValue = ref(props.modelValue)
 const input = ref<HTMLInputElement>()
 
-const checked = computed(() => innerValue.value)
+const checked = computed(() => innerValue.value === props.activeValue);
 
 const switchValue = () => {
   if (props.disabled) return;
-  innerValue.value = !checked.value;
-  emit('update:modelValue', innerValue.value);
-  emit('change', innerValue.value);
+  const newValue = checked.value ? props.inactiveValue : props.activeValue;
+  innerValue.value = newValue;
+  emit('update:modelValue', newValue);
+  emit('change', newValue);
 }
 
 onMounted(() => {
