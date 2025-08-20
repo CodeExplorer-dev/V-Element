@@ -1,0 +1,63 @@
+.wl-switch {
+  --wl-switch-on-color: var(--wl-color-primary);
+  --wl-switch-off-color: var(--wl-border-color);
+  --wl-switch-on-border-color: var(--wl-color-primary);
+  --wl-switch-off-border-color: var(--wl-border-color);
+}
+
+.wl-switch {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 20px;
+  height: 32px;
+
+  .wl-switch__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    margin: 0;
+    &:focus-visible {
+      & ~ .wl-switch__core {
+        outline: 2px solid var(--wl-switch-on-color);
+        outline-offset: 1px;
+      }
+    }
+  }
+
+  &.is-checked {
+    .wl-switch__core {
+      background-color: var(--wl-switch-on-color);
+      border-color: var(--wl-switch-on-border-color);
+
+      .wl-switch__core-action {
+        left: calc(100% - 17px);
+      }
+    }
+  }
+}
+
+.wl-switch__core {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  height: 20px;
+  min-width: 40px;
+  border: 1px solid var(--wl-switch-off-border-color);
+  outline: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: var(--wl-switch-off-color);
+  cursor: pointer;
+  transition: border var(--wl-transition-duration), background-color var(--wl-transition-duration);
+  .wl-switch__core-action {
+    position: absolute;
+    left: 1px;
+    border-radius: var(--wl-border-radius-circle);
+    width: 16px;
+    height: 16px;
+    background-color: var(--wl-color-white);
+    transition: all var(--wl-transition-duration);
+  }
+}

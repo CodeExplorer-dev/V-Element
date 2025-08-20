@@ -16,6 +16,7 @@ import Toolip from './components/Tooltip/Tooltip.vue';
 import Dropdown from './components/Dropdown/Dropdown.vue';
 import Message from './components/Message/Message.vue';
 import Input from './components/Input/Input.vue';
+import Switch from './components/Switch/Switch.vue';
 
 import { createPopper } from '@popperjs/core'
 import { createMessage } from './components/Message/methods.ts';
@@ -191,5 +192,7 @@ onMounted(() => {
   <Input v-model="inputValue" type="textarea" placeholder="请输入"></Input>
   <Input v-model="inputValue" type="text" placeholder="请输入" show-password></Input>
   <Input v-model="inputValue" type="text" placeholder="请输入" clearable></Input>
+
+  <Switch :model-value="true" />
 </template>
 
