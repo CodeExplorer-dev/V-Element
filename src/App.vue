@@ -63,6 +63,8 @@ const inlineConsole = (...args: any) => {
   console.log(...args)
 }
 
+const test = ref('right')
+
 onMounted(() => {
   createMessage({ message: 'Hello World one', duration: 0, showClose: true, type: 'success' })
   createMessage({ message: 'Hello World two',duration: 0, showClose: true, type: 'info' })
@@ -193,6 +195,8 @@ onMounted(() => {
   <Input v-model="inputValue" type="text" placeholder="请输入" show-password></Input>
   <Input v-model="inputValue" type="text" placeholder="请输入" clearable></Input>
 
-  <Switch :model-value="true" />
+  <Switch v-model="test" active-value="right" inactive-value="wrong" />
+
+  <Switch v-model="test" activeText="ON" inactiveText="OFF" />
 </template>
 

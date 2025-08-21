@@ -19,6 +19,11 @@
     @keydown.enter="switchValue"
   >
   <div class="wl-switch__core">
+    <div class="wl-switch__core-inner">
+      <span v-if="activeText || inactiveText" class="wl-switch__core-inner-text">
+        {{ checked ? activeText : inactiveText }}
+      </span>
+    </div>
     <div class="wl-switch__core-action"></div>
   </div>
 </div>
