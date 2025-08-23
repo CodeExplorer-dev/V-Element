@@ -1,7 +1,7 @@
 .wl-message {
   --wl-message-bg-color: var(--wl-color-info-light-9);
   --wl-message-border-color: var(--wl-border-color-lighter);
-  --wl-message-padding: 15px 19px;
+  --wl-message-padding: 5px 19px;
   --wl-message-text-color: var(--wl-text-color-primary);
   --wl-message-close-size: 16px;
   --wl-messasge-close-icon-color: var(--wl-text-color-placeholder);
@@ -32,7 +32,7 @@
     overflow-wrap: anywhere;
   }
   &.is-close .wl-message__content {
-    padding-right: 30px;
+    padding-right: 10px;
   }
   .wl-message__close {
     display: flex;
@@ -40,6 +40,15 @@
   }
   .wl-message__close svg {
     cursor: pointer;
+  }
+}
+
+.wl-message--primary {
+  --wl-message-bg-color: var(--wl-color-primary-light-9);
+  --wl-message-border-color: var(--wl-color-primary-light-8);
+  --wl-message-text-color: var(--wl-color-primary);
+  .wl-message__close {
+    --wl-icon-color: var(--wl-color-primary)
   }
 }
 
