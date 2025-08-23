@@ -91,7 +91,6 @@ onMounted(() => {
     :menu-options="menuOptions"
     @visible-change="e => inlineConsole('visible-change', e)"
     @select="e => inlineConsole('select', e)"
-    
   >
     <img src="./assets/img.png" alt="Vue logo" width="125" height="125" />
   </Dropdown>
@@ -198,5 +197,6 @@ onMounted(() => {
   <Switch v-model="test" active-value="right" inactive-value="wrong" />
 
   <Switch v-model="test" activeText="ON" inactiveText="OFF" />
+  <Switch v-model="test" disabled/>
 </template>
 

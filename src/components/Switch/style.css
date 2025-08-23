@@ -87,3 +87,54 @@
     }
   }
 }
+
+.wl-switch {
+  /* 禁用状态容器样式 */
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+    
+    /* 禁用状态的颜色变量 */
+    --wl-switch-disabled-bg: var(--wl-disabled-bg-color);
+    --wl-switch-disabled-border: var(--wl-disabled-border-color);
+    --wl-switch-disabled-text: var(--wl-disabled-text-color);
+    
+    .wl-switch__core {
+      cursor: not-allowed;
+      background-color: var(--wl-switch-disabled-bg);
+      border-color: var(--wl-switch-disabled-border);
+      
+      /* 禁用状态的滑块样式 */
+      .wl-switch__core-action {
+        background-color: var(--wl-color-white);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* 禁用状态的文字样式 */
+      .wl-switch__core-inner-text {
+        color: var(--wl-switch-disabled-text);
+      }
+    }
+    
+    /* 选中状态的禁用样式 */
+    &.is-checked {
+      .wl-switch__core {
+        background-color: var(--wl-switch-disabled-bg);
+        border-color: var(--wl-switch-disabled-border);
+        
+        .wl-switch__core-action {
+          background-color: var(--wl-color-white);
+        }
+        
+        .wl-switch__core-inner-text {
+          color: var(--wl-switch-disabled-text);
+        }
+      }
+    }
+  }
+}
+
+/* 焦点样式禁用 */
+.wl-switch.is-disabled .wl-switch__input:focus-visible ~ .wl-switch__core {
+  outline: none;
+}
